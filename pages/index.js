@@ -1,5 +1,4 @@
-function HomePage() {
-    return <div>Welcaaaome tdddddo Next.js!</div>
-}
+import App from '../components/App/App'
 
-export default HomePage
+
+export default App
