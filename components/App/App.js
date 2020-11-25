@@ -3,21 +3,30 @@ import Page from '../Page/Page';
 import Search from '../Search/Search';
 import Container from '@material-ui/core/Container';
 import Stage from '../Stage/Stage';
-
+import StagesMenu from '../StagesMenu/StagesMenu';
 
 const App = () => {
     const [parasha, setParasha] = useState("");
-    const onChange = (e, value) => {
+    const [stage, setStage] = useState(0);
+    const onParashaChange = (e, value) => {
         setParasha(value);
     };
+
+    const onStageChange = (e, value) => {
+        setStage(value);
+    };
+
     return (
         <Page>
             <Container dir="rtl">
                 <div className="search">
-                    <Search onChange={onChange} />
+                    <Search onChange={onParashaChange} />
                 </div>
                 <div>
-                    <Stage parasha={parasha} />
+                    <StagesMenu onChange={onStageChange} />
+                </div>
+                <div>
+                    <Stage parasha={parasha} stage={stage} />
                 </div>
 
             </Container>

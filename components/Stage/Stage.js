@@ -20,12 +20,12 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function AlignItemsList({ parasha }) {
+export default function AlignItemsList({ parasha, stage = 0 }) {
     const classes = useStyles();
     if (!parasha) {
         return null;
     }
-    const pasuks = tora.parasha[parasha].stages[0];
+    const pasuks = tora.parasha[parasha].stages[stage];
 
     return (
         <List className={classes.root} a>
@@ -45,7 +45,7 @@ export default function AlignItemsList({ parasha }) {
                                 />
                             </div>
                             <div key={index + "audio"}>
-                                <audio controls autoplay hidden="" style={{ width: "300px" }}>
+                                <audio controls hidden="" style={{ width: "300px" }}>
                                     <source
                                         src={`https://tora613.net/tora/${parashaPath}${pasuk.audio}`}
                                         type="audio/mpeg"
