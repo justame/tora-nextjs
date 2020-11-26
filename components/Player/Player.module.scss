@@ -1,0 +1,20 @@
+.player {
+    // background-color: red;
+    display: flex;
+    flex-direction: column;
+}
+
+.image {
+    border: solid 1px #CCC;
+    max-width: 400px;
+    height: 400px;
+    // background-color: green;
+}
+
+.caption {
+    // background-color:blue;
+}
+
+.audio {
+    display: none;
+}

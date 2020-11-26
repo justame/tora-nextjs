@@ -4,6 +4,8 @@ import Search from '../Search/Search';
 import Container from '@material-ui/core/Container';
 import Stage from '../Stage/Stage';
 import StagesMenu from '../StagesMenu/StagesMenu';
+import Player from '../Player/Player';
+import tora from "../../consts/tora.json";
 
 const App = () => {
     const [parasha, setParasha] = useState("");
@@ -12,10 +14,26 @@ const App = () => {
         setParasha(value);
     };
 
+    let playlist = [];
+
     const onStageChange = (value) => {
         setStage(value);
     };
 
+    if (parasha) {
+        const pasuks = tora.parasha[parasha].stages[stage];
+        playlist = pasuks.map(pasuk => {
+            const parashaPath = tora.parasha[parasha].parashaLink.replace(
+                "parasha.htm",
+                ""
+            );
+            return {
+                image: `https://tora613.net/tora/${parashaPath}/${pasuk.image}`,
+                audio: `https://tora613.net/tora/${parashaPath}${pasuk.audio}`,
+                caption: parasha
+            }
+        })
+    }
     return (
         <Page>
             <Container dir="rtl">
@@ -26,8 +44,10 @@ const App = () => {
                     <StagesMenu onChange={onStageChange} />
                 </div>
                 <div>
-                    <Stage parasha={parasha} stage={stage} />
+                    <Player playlist={playlist} />
+                    {/* <Stage parasha={parasha} stage={stage} /> */}
                 </div>
+
 
             </Container>
 
