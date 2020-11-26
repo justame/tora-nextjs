@@ -4,6 +4,6 @@
         "airbnb/hooks"
     ],
     "rules": {
-        "eslint-disable react/jsx-filename-extension": 0
+        "react/jsx-filename-extension": 0
     }
 }

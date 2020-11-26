@@ -4,13 +4,15 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { matchSorter } from 'match-sorter';
+import Container from '@material-ui/core/Container';
 import tora from '../../consts/tora.json';
 
 const filterOptions = (options, { inputValue }) => matchSorter(options, inputValue);
 
 export default function Search({ onChange }) {
   return (
-    <div style={{ width: 300 }} dir="rtl">
+    <Container>
+
       <Autocomplete
         dir="rtl"
         id="free-solo-2-demo"
@@ -29,6 +31,7 @@ export default function Search({ onChange }) {
           />
         )}
       />
-    </div>
+
+    </Container>
   );
 }

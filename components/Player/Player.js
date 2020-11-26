@@ -68,11 +68,16 @@ const Player = ({ playlist }) => {
       </div>
       <div className={styles.caption}>
         פסוק
-        {currentIndex + 1}
-        {' '}
+        <span className={styles.current}>
+          {currentIndex + 1}
+        </span>
+        {'  '}
         מתוך
-        {' '}
-        {playlist.length}
+        {'  '}
+        <span className={styles.length}>
+          {playlist.length}
+
+        </span>
       </div>
       <div>
         <Button variant="contained" color="primary" onClick={pause}>
