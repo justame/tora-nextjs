@@ -12,7 +12,7 @@ const App = () => {
         setParasha(value);
     };
 
-    const onStageChange = (e, value) => {
+    const onStageChange = (value) => {
         setStage(value);
     };
 

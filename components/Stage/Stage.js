@@ -25,6 +25,7 @@ export default function AlignItemsList({ parasha, stage = 0 }) {
     if (!parasha) {
         return null;
     }
+    console.log(stage)
     const pasuks = tora.parasha[parasha].stages[stage];
 
     return (
@@ -35,8 +36,8 @@ export default function AlignItemsList({ parasha, stage = 0 }) {
                     ""
                 );
                 return (
-                    <>
-                        <div key={index} lignItems="center">
+                    <div key={index}>
+                        <div key={index}>
                             <div key={index + "image"}>
                                 <img
                                     style={{ maxWidth: "100%" }}
@@ -54,7 +55,7 @@ export default function AlignItemsList({ parasha, stage = 0 }) {
                             </div>
                         </div>
                         <Divider variant="inset" component="li" />
-                    </>
+                    </div>
                 );
             })}
         </List>
