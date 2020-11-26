@@ -15,8 +15,9 @@ export default function Search({ onChange }) {
                 options={Object.keys(tora.parasha).map((option) => option)}
                 renderInput={(params) => (
                     <TextField
+                        dir="rtl"
                         {...params}
-                        label="Search input"
+                        label="חפש פרשה"
                         margin="normal"
                         variant="outlined"
                         InputProps={{ ...params.InputProps, type: "search" }}
