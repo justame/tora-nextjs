@@ -1,0 +1,9 @@
+{
+    "extends": [
+        "airbnb",
+        "airbnb/hooks"
+    ],
+    "rules": {
+        "eslint-disable react/jsx-filename-extension": 0
+    }
+}
